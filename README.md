@@ -6,3 +6,12 @@ https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/water-licens
 
 https://www2.gov.bc.ca/assets/gov/environment/air-land-water/water/water-licensing-and-rights/imapbc_how_to_identify_water_allocation_notations.pdf
 https://www2.gov.bc.ca/assets/gov/environment/air-land-water/water/water-licensing-and-rights/joint_works_agreement_water_licence.pdf
+
+from azure.ai.openai import OpenAIClient
+import os
+ 
+# Set up the client with API key and endpoint
+client = OpenAIClient(
+api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+)
