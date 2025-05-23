@@ -64,6 +64,7 @@ def create_index_definition(index_name: str, model: str) -> SearchIndex:
         SearchableField(name="chunk_content", type=SearchFieldDataType.String),
         SearchableField(name="title", type=SearchFieldDataType.String),
         SearchableField(name="filepath", type=SearchFieldDataType.String),
+        SearchableField(name="url", type=SearchFieldDataType.String),
         SearchField(
             name="chunk_content_vector",
             type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
@@ -172,7 +173,8 @@ def upload_text(text,title):
     df['id'] = df.index + total_records + 1
     df['title']  = title
     df['filepath'] = title
-    df = df[['id', 'chunk_content', 'chunk_content_vector','title','filepath']]
+    df['url'] = title
+    df = df[['id', 'chunk_content', 'chunk_content_vector','title','filepath','url']]
 
     df.to_json(title+".json", orient="records")
     text_df = pd.read_json(title+".json") 
