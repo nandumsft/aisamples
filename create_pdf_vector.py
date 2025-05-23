@@ -49,7 +49,7 @@ azure_oai_client = AzureOpenAI(
 title = "temp_title"
 #write a function to loop through the list of files in the directory and create embeddings for each file
 
-text_index_name = "first_pdf_index"
+text_index_name = os.environ["AISEARCH_INDEX_NAME"]
 
 
 def create_index_definition(index_name: str, model: str) -> SearchIndex:
