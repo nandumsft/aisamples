@@ -63,6 +63,7 @@ def create_index_definition(index_name: str, model: str) -> SearchIndex:
         SimpleField(name="id", type=SearchFieldDataType.String, key=True),
         SearchableField(name="chunk_content", type=SearchFieldDataType.String),
         SearchableField(name="title", type=SearchFieldDataType.String),
+        SearchableField(name="filepath", type=SearchFieldDataType.String),
         SearchField(
             name="chunk_content_vector",
             type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
