@@ -5,3 +5,6 @@ azure-search-documents
 pandas
 python-dotenv
 opentelemetry-api
+openai
+langchain
+pypdf2

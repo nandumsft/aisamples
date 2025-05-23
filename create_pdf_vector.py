@@ -170,7 +170,8 @@ def upload_text(text,title):
     df['chunk_content_vector'] = df['chunk_content'].apply(lambda x : azure_oai_client.embeddings.create(input = [x], model="text-embedding-ada-002").data[0].embedding) 
     df['id'] = df.index + total_records + 1
     df['title']  = title
-    df = df[['id', 'chunk_content', 'chunk_content_vector']]
+    df['filepath'] = title
+    df = df[['id', 'chunk_content', 'chunk_content_vector','title','filepath']]
 
     df.to_json(title+".json", orient="records")
     text_df = pd.read_json(title+".json") 
