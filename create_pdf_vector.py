@@ -225,6 +225,6 @@ for filename in os.listdir("./data"):
                 title = filename.split('/')[-1].split('.')[0]
                 print(title)
                 text = file.read()
-                # upload_text(text,title)
-                # print(f"Uploaded {filename} to the index.")
+                upload_text(text,title)
+                print(f"Uploaded {filename} to the index.")
         
